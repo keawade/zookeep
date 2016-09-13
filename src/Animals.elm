@@ -1,5 +1,7 @@
 module Animals exposing (Animal, animals)
 
+import Array exposing (..) 
+
 type alias Animal =
   {
     name: String,
@@ -181,9 +183,9 @@ antipode =
   }
 
 
-animals : List Animal
+animals : Array Animal
 animals =
-  [
+  fromList [
     mooney,
     sami,
     chester,
