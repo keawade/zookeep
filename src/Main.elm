@@ -5,6 +5,9 @@ import Html.App as App
 import Html.Attributes exposing (..)
 import Array exposing (..)
 import FeaturedAnimal
+import AnimalGallery
+import AnimalAges
+import Attribution
 import Animals
 
 
@@ -55,22 +58,12 @@ view model =
             [ h1 [] [ text "Welcome to the Zoo!" ]
             ]
         , FeaturedAnimal.display (getAnimal Animals.animals "Taylor")
-        , section [ class "animal-gallery" ]
-            [ h2 [] [ text "Animal Gallery" ]
-            , p [ class "animal-gallery--description" ] [ text "Take a look at the animals at the zoo!" ]
-            , div [ class "animal-gallery--animals" ] [ text "Image Placeholder" ]
-            ]
-        , section [ class "animal-ages" ]
-            [ h2 [] [ text "Animal Ages" ]
-            , p [ class "animal-ages--description" ] [ text "We have a wide variety of species and ages at the zoo!" ]
-            ]
-        , section [ class "attrbution" ]
-            [ p []
-                [ a [ href "resources/attribution.html" ] [ text "Images provided by Wikimedia Commons." ]
-                ]
-            ]
+        , AnimalGallery.display Animals.animals
+        , AnimalAges.display
+        , Attribution.display
         ]
 
-getAnimal : Array Animals.Animal -> String -> String
+
+getAnimal : List Animals.Animal -> String -> String
 getAnimal aniArr item =
     "Taylor"

@@ -5,6 +5,7 @@ import Html.Attributes exposing (..)
 import Animals exposing (..)
 
 
+display : String -> Html a
 display animal =
     section [ class "featured-animal" ]
         [ h2 [] [ text "Featured Animal" ]

@@ -183,9 +183,9 @@ antipode =
   }
 
 
-animals : Array Animal
+animals : List Animal
 animals =
-  fromList [
+  [
     mooney,
     sami,
     chester,
